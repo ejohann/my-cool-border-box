@@ -13,14 +13,14 @@ wp.blocks.registerBlockType('johanne/border-box', {
 		function updateColor(value){
 			props.setAttributes({color: value.hex})
 		}
-		return React.createElement("div", null, React.createElement("h3", null, "Your Cool Border Box"), 
-			React.createElement("input", 
+		return wp.element.createElement("div", null, wp.element.createElement("h3", null, "Your Cool Border Box"), 
+			wp.element.createElement("input", 
 				{type: "text", value: props.attributes.content, onChange: updateContent}), 
-			React.createElement(wp.components.ColorPicker, 
+			wp.element.createElement(wp.components.ColorPicker, 
 				{color: props.attributes.color, onChangeComplete: updateColor}));
 	},
 	save: function(props){
-		return React.createElement("div", null, React.createElement("h3", 
+		return wp.element.createElement("div", null, wp.element.createElement("h3", 
 			{style: {border: "5px solid ".concat(props.attributes.color)}}, props.attributes.content));
 	} 
 })
