@@ -20,6 +20,7 @@ wp.blocks.registerBlockType('johanne/border-box', {
 				{color: props.attributes.color, onChangeComplete: updateColor}));
 	},
 	save: function(props){
-		return null
+		return React.createElement("div", null, React.createElement("h3", 
+			{style: {border: "5px solid ".concat(props.attributes.color)}}, props.attributes.content));
 	} 
 })
